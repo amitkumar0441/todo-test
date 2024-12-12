@@ -8,7 +8,9 @@ WORKDIR /app
 COPY . .
 
 # Install Python dependencies
+RUN pip install --upgrade pip
 RUN pip install --no-cache-dir -r requirements.txt
+
 
 # Run database migrations
 RUN python manage.py migrate
